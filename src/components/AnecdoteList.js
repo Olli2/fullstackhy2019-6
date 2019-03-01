@@ -18,7 +18,7 @@ const AnecdoteList = (props) => {
         
     return (
         <div>
-            <Notification text={props.notification}/>
+            <Notification/>
             {anecdotes.map(anecdote =>
                 <div key={anecdote.id}>
                 <div>
