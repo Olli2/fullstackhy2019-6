@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Notification = ({ store }) => {
+const Notification = (props) => {
   const style = {
     border: 'solid',
     padding: 10,
@@ -8,12 +8,14 @@ const Notification = ({ store }) => {
   }
   
   return (
-    store.getState().notification === ''
+    props.text === ''
       ? <div></div>
       : <div style={style}>
-          {store.getState().notification}
+          {props.text}
         </div>
   )
 }
+
+
 
 export default Notification
