@@ -1,5 +1,4 @@
 import React from 'react'
-import Anecdote from '../reducers/notificationReducer'
 
 const Notification = ({ store }) => {
   const style = {
@@ -9,9 +8,11 @@ const Notification = ({ store }) => {
   }
   
   return (
-    <div style={style}>
-      {store.getState().notification}
-    </div>
+    store.getState().notification === ''
+      ? <div></div>
+      : <div style={style}>
+          {store.getState().notification}
+        </div>
   )
 }
 
