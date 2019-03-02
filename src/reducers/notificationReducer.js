@@ -1,9 +1,16 @@
-export const showVoteNotification = (text) => {
-    return {
+export const showVoteNotification = (text, seconds) => {
+    return async dispatch => {
+        dispatch({
         type: 'SHOW_VOTE',
         data: {
             text: text,
         }
+        })
+        setTimeout(() => {
+            dispatch({
+                type: 'HIDE_NOTIFICATION'
+            })
+        }, seconds*1000);
     }
 }
 
